@@ -14,21 +14,23 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tresjs/cientos": "^3.9.0",
     "@tresjs/core": "^4.1.0",
-    "typescript": "~5.4.0",
+    "naive-ui": "^2.38.2",
     "three": "^0.166.1",
+    "typescript": "~5.4.0",
+    "vfonts": "^0.0.3",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vuetify": "^3.6.12",
-    "vuex": "^4.1.0",
-    "naive-ui": "^2.38.2",
-    "vfonts": "^0.0.3"
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20.14.5",
+    "@types/three": "^0.166.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
