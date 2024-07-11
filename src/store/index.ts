@@ -1,13 +1,15 @@
 import { createStore } from 'vuex'
 
 import type { CharacterForm } from '../data/character-form-types'
+import { hairFileLocation } from '../data/avatar-scene'
 
 const store = createStore<CharacterForm>({
   state: {
     name: null,
-    hairStyle: null,
+    hairStyle: 'mid-length',
     hairColour: '#18A058',
-    clothing: null
+    clothing: null,
+    hairStylePath: `${hairFileLocation}mid-length.fbx`
   },
   mutations: {
     setName(state: CharacterForm, name: string | null) {
@@ -21,6 +23,9 @@ const store = createStore<CharacterForm>({
     },
     setClothing(state: CharacterForm, clothing: string | null) {
       state.clothing = clothing
+    },
+    setHairStylePath(state: CharacterForm, hairStylePath: string | null) {
+      state.hairStylePath = hairStylePath
     }
   },
   actions: {
@@ -29,6 +34,7 @@ const store = createStore<CharacterForm>({
     },
     updateHairStyle({ commit }, hairStyle: string | null) {
       commit('setHairStyle', hairStyle)
+      commit('setHairStylePath', `${hairFileLocation}${hairStyle}.fbx`)
     },
     updateHairColour({ commit }, hairColour: string | null) {
       commit('setHairColour', hairColour)
@@ -41,7 +47,8 @@ const store = createStore<CharacterForm>({
     name: (state: CharacterForm) => state.name,
     hairStyle: (state: CharacterForm) => state.hairStyle,
     hairColour: (state: CharacterForm) => state.hairColour,
-    clothing: (state: CharacterForm) => state.clothing
+    clothing: (state: CharacterForm) => state.clothing,
+    hairStylePath: (state: CharacterForm) => state.hairStylePath
   }
 })
 

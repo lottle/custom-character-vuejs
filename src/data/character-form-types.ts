@@ -3,4 +3,5 @@ export interface CharacterForm {
   hairStyle: string | null
   hairColour: string | null
   clothing: string | null
+  hairStylePath: string | null
 }

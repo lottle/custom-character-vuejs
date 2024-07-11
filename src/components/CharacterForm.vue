@@ -1,3 +1,4 @@
+<!-- Character Form -->
 <template>
   <n-layout>
     <n-layout-header>
@@ -37,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, ref } from 'vue'
+import { computed, defineComponent } from 'vue'
 import {
   NInput,
   NLayoutHeader,

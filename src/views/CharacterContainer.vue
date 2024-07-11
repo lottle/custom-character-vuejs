@@ -37,7 +37,7 @@ export default defineComponent({
   background-color: #f0f0f0;
 }
 .right-panel {
-  flex: 2;
+  flex: 1;
   background-color: #fff;
 }
 </style>
