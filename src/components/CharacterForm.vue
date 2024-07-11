@@ -32,7 +32,7 @@
       </n-layout-content>
     </n-layout>
     <n-layout-footer>
-      <n-button>Submit</n-button>
+      <n-button :on-click="submit">Submit</n-button>
     </n-layout-footer>
   </n-layout>
 </template>
@@ -51,8 +51,8 @@ import {
   NColorPicker,
   type SelectOption
 } from 'naive-ui'
-import { hairOptions, clothingOptions } from '../data/character-form'
-import type { CharacterForm } from '../data/character-form-types'
+import { hairOptions, clothingOptions, submitCharacter } from '../data/character-form'
+import type { CharacterForm } from '@/data/character-form-types'
 import { useStore } from 'vuex'
 
 export default defineComponent({
@@ -92,13 +92,26 @@ export default defineComponent({
       set: (value) => store.dispatch('updateClothing', value)
     })
 
+    const characterData = computed(() => ({
+      name: name.value,
+      hairStyle: hairStyle.value,
+      hairColour: hairColour.value,
+      clothing: clothing.value,
+      hairStylePath: ''
+    }))
+
+    const submit = () => {
+      submitCharacter(characterData.value)
+    }
+
     return {
       name,
       hairStyle,
       hairColour,
       clothing,
       hairOptList,
-      clothingOptList
+      clothingOptList,
+      submit
     }
   }
 })

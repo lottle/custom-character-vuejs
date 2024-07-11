@@ -27,6 +27,7 @@
 </template>
 
 <script lang="ts">
+import * as THREE from 'three'
 import { BasicShadowMap, SRGBColorSpace, NoToneMapping } from 'three'
 import { TresCanvas } from '@tresjs/core'
 import { OrbitControls, FBXModel } from '@tresjs/cientos'
@@ -46,7 +47,7 @@ export default defineComponent({
   watch: {
     hairStylePath(newHairStyle, oldHairStyle) {
       console.log(`Hair style changed from ${oldHairStyle} to ${newHairStyle}`)
-      //requires re-rendering components
+      //requires further tresjs plugin investigation to rerender changes
     }
   },
   setup() {
@@ -62,9 +63,6 @@ export default defineComponent({
       outputColorSpace: SRGBColorSpace,
       toneMapping: NoToneMapping
     }
-    console.log(modelPath)
-    console.log(hairPath)
-
     return {
       gl,
       modelPath,

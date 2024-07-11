@@ -16,6 +16,7 @@
   "dependencies": {
     "@tresjs/cientos": "^3.9.0",
     "@tresjs/core": "^4.1.0",
+    "@tresjs/post-processing": "^0.7.1",
     "naive-ui": "^2.38.2",
     "three": "^0.166.1",
     "typescript": "~5.4.0",
